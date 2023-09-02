@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
-            iconTheme: IconThemeData(color: AppColors.primaryText),
+            iconTheme: const IconThemeData(color: AppColors.primaryText),
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),

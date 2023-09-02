@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/pages/homepage/homepage.dart';
+import 'package:ulearning_app/pages/profile/profile.dart';
 
 import '../../../common/values/color.dart';
 
@@ -16,9 +17,7 @@ Widget buildPage(int index) {
     const Center(
       child: Text("Chat"),
     ),
-    const Center(
-      child: Text("Profile"),
-    ),
+    const ProfilePage(),
   ];
   return _widget[index];
 }

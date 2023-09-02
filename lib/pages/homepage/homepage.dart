@@ -22,23 +22,51 @@ class _HomepageState extends State<Homepage> {
         builder: (context, state) {
           return Container(
             margin: EdgeInsets.symmetric(vertical: 0, horizontal: 25.w),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                homepageText(
-                  "Hello",
-                  color: AppColors.primaryThirdElementText,
-                  top: 20,
+            child: CustomScrollView(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              slivers: [
+                SliverToBoxAdapter(
+                  child: homepageText(
+                    "Hello",
+                    color: AppColors.primaryThirdElementText,
+                    top: 20,
+                  ),
                 ),
-                homepageText(
-                  "Asad",
-                  color: AppColors.primaryText,
-                  top: 5,
+                SliverToBoxAdapter(
+                  child: homepageText(
+                    "Asad",
+                    color: AppColors.primaryText,
+                    top: 5,
+                  ),
                 ),
-                searchView(),
+                SliverToBoxAdapter(
+                  child: searchView(),
+                ),
+
                 // homepageText("asad"),
-                slidersView(context, state),
-                menuView(),
+                SliverToBoxAdapter(
+                  child: slidersView(context, state),
+                ),
+                SliverToBoxAdapter(
+                  child: menuView(),
+                ),
+                SliverPadding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 18.h, horizontal: 0.w),
+                  sliver: SliverGrid(
+                    delegate: SliverChildBuilderDelegate(childCount: 4,
+                        (BuildContext context, int index) {
+                      return GestureDetector(onTap: () {}, child: courseGrid());
+                    }),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 15.0,
+                      crossAxisSpacing: 5,
+                      childAspectRatio: 1.6,
+                    ),
+                  ),
+                ),
               ],
             ),
           );
