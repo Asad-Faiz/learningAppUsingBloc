@@ -8,3 +8,9 @@ class HomePageDots extends HomePageEvent {
 
   HomePageDots(this.index);
 }
+
+class HomePageCourseItem extends HomePageEvent {
+  final List<CourseItem> courseItem;
+
+  HomePageCourseItem(this.courseItem);
+}

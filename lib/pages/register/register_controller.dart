@@ -40,6 +40,8 @@ class RegisterController {
       if (credential.user != null) {
         await credential.user?.sendEmailVerification();
         await credential.user?.updateDisplayName(userName);
+        String photoUrl = "uploads/default.png";
+        await credential.user?.updatePhotoURL(photoUrl);
         toastInfo(msg: "Verification Email has been sent. Check your inbox");
 
         Navigator.of(context).pop();

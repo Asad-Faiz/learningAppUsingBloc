@@ -1,6 +1,8 @@
 // import 'package:firebase_core/firebase_core.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:ulearning_app/common/routes/route.dart';
@@ -10,6 +12,7 @@ import 'common/values/color.dart';
 
 void main() async {
   await Global.init();
+  CachedNetworkImage.logLevel = CacheManagerLogLevel.debug;
   runApp(const MyApp());
 }
 
@@ -25,6 +28,7 @@ class MyApp extends StatelessWidget {
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
         builder: (context, child) => MaterialApp(
+          builder: EasyLoading.init(),
           title: 'Flutter Demo',
           theme: ThemeData(
             iconTheme: const IconThemeData(color: AppColors.primaryText),

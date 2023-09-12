@@ -5,10 +5,15 @@ sealed class HomePageState {}
 
 final class HomePageInitial extends HomePageState {
   final int index;
+  final List<CourseItem> courseItem;
 
-  HomePageInitial({this.index = 0});
+  HomePageInitial({
+    this.courseItem = const <CourseItem>[],
+    this.index = 0,
+  });
 
-  HomePageInitial copyWith(int? index) {
-    return HomePageInitial(index: index ?? this.index);
+  HomePageInitial copyWith(int? index, List<CourseItem>? courseItem) {
+    return HomePageInitial(
+        index: index ?? this.index, courseItem: courseItem ?? this.courseItem);
   }
 }

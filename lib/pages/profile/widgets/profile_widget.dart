@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ulearning_app/common/routes/names.dart';
 import 'package:ulearning_app/common/values/color.dart';
+import 'package:ulearning_app/common/widgets/main_text_widget.dart';
 
 AppBar buildProfileAppBar() {
   return AppBar(
@@ -14,13 +15,7 @@ AppBar buildProfileAppBar() {
             height: 15.h,
             child: Image.asset("assets/icons/menu.png"),
           ),
-          Text(
-            "Profile",
-            style: TextStyle(
-                color: AppColors.primaryText,
-                fontWeight: FontWeight.bold,
-                fontSize: 16.sp),
-          ),
+          reusableSubtitleText("Profile"),
           SizedBox(
             width: 30.w,
             height: 20.h,
@@ -62,6 +57,9 @@ var imageInfo = <String, String>{
   "Love": "heart(1).png",
   "Remainders": "cube.png",
 };
+
+// ntap dunction
+
 // profile
 Widget buildListView(BuildContext context) {
   return Column(
